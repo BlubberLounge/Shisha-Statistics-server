@@ -47,7 +47,9 @@ class ShishaController extends Controller
      */
     public function show(Shisha $shisha)
     {
-        //
+        $data = array();
+        $data['shisha'] = $shisha;
+        return view('shisha.show', $data);
     }
 
     /**

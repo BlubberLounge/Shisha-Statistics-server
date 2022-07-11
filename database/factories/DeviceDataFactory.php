@@ -18,12 +18,12 @@ class DeviceDataFactory extends Factory
     {
         $time = now()->subHours(mt_rand(0, 168));
         $start = $time;
-        $end = $time->addMilliseconds(mt_rand(1111, 22222));
+        $end = clone $start;
 
         return [
             'uuid' => $this->faker->unique()->uuid(),
             'start' => $start,
-            'end' => $end,
+            'end' => $end->addMillis(mt_rand(1111, 66666)),
         ];
     }
 }

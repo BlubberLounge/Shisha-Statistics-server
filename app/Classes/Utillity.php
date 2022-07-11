@@ -28,4 +28,12 @@ class Utillity
             }
         }
     }
+
+    /**
+     * 
+     */
+    public static function getRandomColor()
+    {
+        return sprintf('#%06X', mt_rand(0, 0xFFFFFF));
+    }
 }

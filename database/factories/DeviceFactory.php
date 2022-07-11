@@ -24,7 +24,7 @@ class DeviceFactory extends Factory
             'uuid' => $this->faker->unique()->uuid(),
             'name' => $this->randomDeviceName(),
             'description' => $this->faker->sentence(mt_rand(5, 20)),
-            'last_seen' => now(),
+            'last_seen' => now()->subHours(mt_rand(0, 48)),
             'ip_address' => $this->faker->unique()->ipv4(),
             'mac_address' => $this->faker->unique()->macAddress(),
         ];

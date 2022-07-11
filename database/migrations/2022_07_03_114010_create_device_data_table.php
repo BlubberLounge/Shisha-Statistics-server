@@ -24,8 +24,10 @@ return new class extends Migration
                 ->constrained('devices')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->dateTime('start');
-            $table->dateTime('end');
+            $table->timestamp('start', 6)
+                ->nullable();
+            $table->timestamp('end', 6)
+                ->nullable();
             $table->timestamps();
         });
     }

@@ -31,4 +31,12 @@ class Device extends Model
     {
         return $this->hasMany(DeviceData::class);
     }
+
+    /**
+     * 
+     */
+    public function latestData()
+    {
+        return $this->hasMany(DeviceData::class)->orderBy('id', 'desc')->first();
+    }
 }
